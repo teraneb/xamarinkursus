@@ -10,7 +10,13 @@ namespace IntroToCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            int myint = 0;
+            while (myint < 10)
+            {
+                Console.Write(myint);
+                myint = myint+1;
+            }
+            Console.WriteLine();
             Console.ReadKey();
         }
     }
