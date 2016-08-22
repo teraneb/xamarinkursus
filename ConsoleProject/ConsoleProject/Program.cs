@@ -10,8 +10,20 @@ namespace ConsoleProject
     {
         static void Main(string[] args)
         {
-            DivideZeroElse204();
+            Dyreart art = new Dyreart();
+
+            var person = new People("Terane");
+            person.NameChanged += Person_NameChanged;
+
+            person.Name = "Anders";
+            person.Name = "Søren";
+
             Console.ReadKey();
+        }
+
+        private static void Person_NameChanged(object sender, string name)
+        {
+            Console.WriteLine("Name changed: " + name);
         }
 
         public static void FirstProgram101()
@@ -107,7 +119,7 @@ namespace ConsoleProject
             Console.Write("Enter the number 3:");
             number1 = Convert.ToInt32(Console.ReadLine());
 
-            if (number1 > number2 && number1 >)
+            //if (number1 > number2 && number1 >)
         }
 
         public static void CharOpgave()
