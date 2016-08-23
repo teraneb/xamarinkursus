@@ -10,13 +10,17 @@ namespace ConsoleProject
     {
         static void Main(string[] args)
         {
-            Dyreart art = new Dyreart();
+            //Dyreart art = new Dyreart("csf", 2, 2);
+            //Console.WriteLine(art.Talk());
+            
+                
 
-            var person = new People("Terane");
-            person.NameChanged += Person_NameChanged;
+            //var person = new People("Terane");
+            //person.NameChanged += Person_NameChanged;
 
-            person.Name = "Anders";
-            person.Name = "Søren";
+            //person.Name = "Anders";
+            //person.Name = "Søren";
+
 
             Console.ReadKey();
         }

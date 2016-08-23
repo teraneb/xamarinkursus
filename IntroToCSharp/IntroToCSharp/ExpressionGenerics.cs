@@ -4,32 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IntroToCSharp.NonGenerics
+namespace IntroToCSharp.Generics
 {
-    abstract class Expression : IExpression
+    abstract class Expression<T>
     {
-        public abstract double Evaluate();
+        public abstract T Evaluate();
+        
     }
 
     static class ExpressionExpression
     {
-        public static ConstantExpression ToExpression(this double value)
+        public static ConstantExpression<T> ToExpression<T>(this T value)
         {
-            return new ConstantExpression(value);
+            return new ConstantExpression<T>(value);
         }
     }
 
 
-    sealed class ConstantExpression: Expression
+    sealed class ConstantExpression<T>: Expression<T>
     {
-        private readonly double value;
+        private readonly T value;
 
-        public ConstantExpression(double value)
+        public ConstantExpression(T value)
         {
             this.value = value;
         }
 
-        public override double Evaluate()
+        public override T Evaluate()
         {
             return value;        
         }
@@ -39,11 +40,11 @@ namespace IntroToCSharp.NonGenerics
             return Convert.ToString(value);
         }
     }
-
-    abstract class BinaryExpression    : Expression
+    
+    abstract class BinaryExpression<T>    : Expression<T>
     {
-        protected Expression left;
-        protected Expression right;
+        protected Expression<T> left;
+        protected Expression<T> right;
 
         public abstract string OperatorSymbol
         {
@@ -57,9 +58,9 @@ namespace IntroToCSharp.NonGenerics
     }
 
 
-    class PlusExpression : BinaryExpression
+    class PlusExpression<T> : BinaryExpression<T>
     {
-        public PlusExpression(Expression left, Expression right)
+        public PlusExpression(Expression<T> left, Expression<T> right)
         {
             this.left = left;
             this.right = right;
@@ -73,7 +74,7 @@ namespace IntroToCSharp.NonGenerics
             }
         }
 
-        public override double Evaluate()
+        public override T Evaluate()
         {
             return this.left.Evaluate() + this.right.Evaluate();
         }
@@ -83,5 +84,5 @@ namespace IntroToCSharp.NonGenerics
     {
         double Evaluate(); 
     }
-
+    
 }

@@ -12,16 +12,31 @@ namespace ConsoleProject
         private string Name;
         private int Legs;
         private int Eyes;
+        private AnimalType Type = AnimalType.Fish;
+        public string Talk()
+        {
+            if (Type == AnimalType.Bird)
+            {
+                return "pip pip";
+            }
+            {
+                return "...";
+            } 
+        }   
 
         public Dyreart(string name, int legs, int eyes)
         {
             this.Name = name;
             this.Legs = legs;
             this.Eyes = eyes; 
-        }
-
-       
+        }       
     }
+
+    public enum AnimalType
+    {
+        Bird, Fish
+    }
+
 
     class Pet
     {
@@ -29,8 +44,25 @@ namespace ConsoleProject
         public string Name;        
     }
 
+    public delegate bool Filter(People name);
+    static class PersonExtension
+    {
+        public static List<People> FilterOut(this List<People> persons, Filter filter)
+        {
+            List<People> result = new List<ConsoleProject.People>();
+            foreach (People person in persons)
+            {
+                if (!filter.Invoke(person))
+                {
+                    result.Add(person);
+                }
+            }
+            return result;
+        }
+    }
 
-    class People : INotifyPropertyChanged
+
+    public class People : INotifyPropertyChanged
     {
         public string name;
         public int Birth;
@@ -46,8 +78,8 @@ namespace ConsoleProject
             return currentYear - Birth;
         }
         public float GetPetEyes()
-        {            
-            return this.Pet.Kind.eyes;
+        {
+            return 0; // this.Pet.Kind.eyes;
         }
 
         //constructor

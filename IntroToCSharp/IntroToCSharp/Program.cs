@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IntroToCSharp
+namespace IntroToCSharp.Generics
 {
     class Program
     {
@@ -25,13 +25,13 @@ namespace IntroToCSharp
             //      /  \
             //     1    2
 
-            Expression expr = new PlusExpression(
-                left: new ConstantExpression(4),
-                right: new PlusExpression(
-                    left: new ConstantExpression(1),
-                    right: new ConstantExpression(2)));
+            //Expression expr = new PlusExpression(
+            //    left: 4.0.ToExpression(),
+            //    right: new PlusExpression(
+            //        left: new ConstantExpression(1),
+            //        right: new ConstantExpression(2)));
 
-            //Expression expr = new ConstantExpression(5);
+            var expr = new ConstantExpression<int>(10);
 
             Console.Write(expr.ToString());
 
