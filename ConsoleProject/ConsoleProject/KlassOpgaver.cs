@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace ConsoleProject
 {
-    class Dyreart
+    public class Dyreart
     {
-        private string Name;
-        private int Legs;
-        private int Eyes;
+        private string name;
+        private int legs;
+        private int eyes;
         private AnimalType Type = AnimalType.Fish;
+
+        public int Eyes { get { return eyes; } }
+
         public string Talk()
         {
             if (Type == AnimalType.Bird)
@@ -26,9 +29,9 @@ namespace ConsoleProject
 
         public Dyreart(string name, int legs, int eyes)
         {
-            this.Name = name;
-            this.Legs = legs;
-            this.Eyes = eyes; 
+            this.name = name;
+            this.legs = legs;
+            this.eyes = eyes; 
         }       
     }
 
@@ -38,7 +41,7 @@ namespace ConsoleProject
     }
 
 
-    class Pet
+    public class Pet
     {
         public Dyreart Kind;
         public string Name;        
@@ -77,9 +80,9 @@ namespace ConsoleProject
             int currentYear = DateTime.Now.Year;
             return currentYear - Birth;
         }
-        public float GetPetEyes()
+        public int GetPetEyes()
         {
-            return 0; // this.Pet.Kind.eyes;
+            return this.Pet.Kind.Eyes;
         }
 
         //constructor

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,32 @@ namespace ConsoleProject
 {
     class Program
     {
+
+        public static async Task MainAsync()
+        {
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+            Task t1 = Task.Delay(1000);
+            Task t2 = Task.Delay(1000);
+            Task t3 = Task.Delay(3000);
+
+            await Task.WhenAll(t1, t2, t3);
+            await Task.WhenAny(t1, t2, t3);
+
+
+            stopWatch.Stop();
+            double seconds = stopWatch.Elapsed.TotalSeconds;
+            Console.WriteLine("Seconds taken: " + seconds);
+        }
+
         static void Main(string[] args)
         {
+            MainAsync().Wait();
+
             //Dyreart art = new Dyreart("csf", 2, 2);
             //Console.WriteLine(art.Talk());
-            
-                
+
+
 
             //var person = new People("Terane");
             //person.NameChanged += Person_NameChanged;
@@ -21,7 +42,20 @@ namespace ConsoleProject
             //person.Name = "Anders";
             //person.Name = "Søren";
 
+            List<People> people = new List<People>()
+            {
+                new People("Terane", "Lui", new Dyreart("dog", 4, 2)),
+                new People("Hans", "Hr. Fisk", new Dyreart("Fisk", 0, 2)),
+                new People("Søren", "Adr", new Dyreart("Edderkop", 8, 6))
+            };
 
+            //List<People> result = people.FilterOut(person => person.GetPetEyes() > 2);
+            List<People> result = people.FilterOut(person => person.Name == "Egon");
+
+            //foreach (People person in result)
+            //{
+            //    Console.WriteLine("Name: " + person.Name);
+            //}
             Console.ReadKey();
         }
 
