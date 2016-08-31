@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.Page1">
+  <StackLayout>
+  <Label x:Name="MyLabel" FontSize="50" Text="Navigation" TextColor="White"/>
+    <Button Text="Stacklayout Opgave" Clicked="OnClickStackLayoutOpgave"/>
+    <Button Text="Gridlayout Opgave" Clicked="OnClickGridlayoutOpgave"/>
+  </StackLayout>
+</ContentPage>

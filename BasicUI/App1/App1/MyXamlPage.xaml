@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.MyXamlPage">
+
+  <StackLayout>
+    <Label Text = "Stop" BackgroundColor = "Red" Font ="20" VerticalOptions="FillAndExpand" />
+    <Label Text = "Slow down" BackgroundColor= "White" Font ="20" TextColor="Gray" HorizontalOptions="Start" />
+    <Label Text = "Go" BackgroundColor = "Green" Font ="20" HorizontalOptions="FillAndExpand" />
+    <Label x:Name="yellowLabel" Text = "Blue" BackgroundColor = "Blue" Font ="20" VerticalOptions="FillAndExpand" />
+    <Button x:Name ="myButton" Text="Min Knap" Clicked="MyButton_Clicked"/>
+  </StackLayout>
+  
+</ContentPage>

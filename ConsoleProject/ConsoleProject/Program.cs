@@ -9,7 +9,10 @@ namespace ConsoleProject
 {
     class Program
     {
-
+        public class PrimeGenerator: knownPrimes
+        {
+            this.Type  =  
+        }
         public static async Task MainAsync()
         {
             var stopWatch = new Stopwatch();

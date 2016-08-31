@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App.GridLayoutPage"> 
+  <Grid>
+  <Grid.RowDefinitions>
+    <RowDefinition Height="*" />
+    <RowDefinition Height="*" />
+    <RowDefinition Height="*" />
+    <RowDefinition Height="*" />
+    <RowDefinition Height="*" />
+  </Grid.RowDefinitions>
+    
+  <Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
+    <ColumnDefinition Width="*" />
+  </Grid.ColumnDefinitions>
+
+    <Label x:Name="MyLabel" FontSize="70" BackgroundColor="Gray" TextColor="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+    <Button Text="c" Clicked="OnButtonClicked" Grid.Row="1" Grid.Column="0" FontSize="30" FontAttributes="Bold" BackgroundColor="Gray"/>
+    <Button Text="+/-" Clicked="OnButtonClicked" Grid.Row="1" Grid.Column="1" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="%" Clicked="OnButtonClicked" Grid.Row="1" Grid.Column="2" FontSize="30" FontAttributes="Bold"/>
+    <Button Text=":" Clicked="OnButtonClicked" Grid.Row="1" Grid.Column="3" FontSize="30" FontAttributes="Bold" BackgroundColor="Red"/>
+    <Button Text="7" Clicked="OnButtonClicked" Grid.Row="2" Grid.Column="0" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="8" Clicked="OnButtonClicked" Grid.Row="2" Grid.Column="1" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="9" Clicked="OnButtonClicked" Grid.Row="2" Grid.Column="2" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="x" Clicked="OnButtonClicked" Grid.Row="2" Grid.Column="3" FontSize="30" FontAttributes="Bold" BackgroundColor="Red"/>
+    <Button Text="4" Clicked="OnButtonClicked" Grid.Row="3" Grid.Column="0" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="5" Clicked="OnButtonClicked" Grid.Row="3" Grid.Column="1" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="6" Clicked="OnButtonClicked" Grid.Row="3" Grid.Column="2" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="-" Clicked="OnButtonClicked" Grid.Row="3" Grid.Column="3" FontSize="30" FontAttributes="Bold" BackgroundColor="Red"/>
+    <Button Text="1" Clicked="OnButtonClicked" Grid.Row="4" Grid.Column="0" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="2" Clicked="OnButtonClicked" Grid.Row="4" Grid.Column="1" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="3" Clicked="OnButtonClicked" Grid.Row="4" Grid.Column="2" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="+" Clicked="OnButtonClicked" Grid.Row="4" Grid.Column="3" FontSize="30" FontAttributes="Bold" BackgroundColor="Red"/>
+    <Button Text="0" Clicked="OnButtonClicked" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="," Clicked="OnButtonClicked" Grid.Row="5" Grid.Column="2" FontSize="30" FontAttributes="Bold"/>
+    <Button Text="=" Clicked="OnButtonClicked" Grid.Row="5" Grid.Column="3" FontSize="30" FontAttributes="Bold" BackgroundColor="Red"/>     
+</Grid>
+</ContentPage>
