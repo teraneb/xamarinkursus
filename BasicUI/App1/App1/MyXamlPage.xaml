@@ -4,6 +4,7 @@
              x:Class="App1.MyXamlPage">
 
   <StackLayout>
+    <Image Source="Top" VerticalOptions="Center" />
     <Label Text = "Stop" BackgroundColor = "Red" Font ="20" VerticalOptions="FillAndExpand" />
     <Label Text = "Slow down" BackgroundColor= "White" Font ="20" TextColor="Gray" HorizontalOptions="Start" />
     <Label Text = "Go" BackgroundColor = "Green" Font ="20" HorizontalOptions="FillAndExpand" />
